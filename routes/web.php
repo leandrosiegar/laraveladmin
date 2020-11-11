@@ -20,3 +20,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// Route::get('login/{driver}', 'Auth\LoginController@redirectToProvider');
+// Route::get('login/{driver}/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/login_facebook', 'SocialAuthController@loginFacebook');
+Route::get('/back_facebook', 'SocialAuthController@callbackFacebook');

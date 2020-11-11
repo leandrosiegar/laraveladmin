@@ -2,6 +2,8 @@
 
 @section('title', 'Dashboard')
 
+
+
 @section('content_header')
     <h1>Dashboard</h1>
 @endsection
@@ -15,5 +17,11 @@
 @endsection
 
 @section('js')
-  <script>console.log("aqui iran los js");</script>
+  <script>
+      Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+        )
+  </script>
 @endsection

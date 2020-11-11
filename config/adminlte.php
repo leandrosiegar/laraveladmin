@@ -232,11 +232,21 @@ return [
 
     'menu' => [
         [
-            'text' => 'search',
+            'text' => 'Búsqueda',
             'search' => true,
             'topnav' => true,
         ],
         [
+            'text' => 'Búsqueda',
+            'search' => true,
+            'topnav' => false,
+        ],
+        [
+            'text' => 'Link 1',
+            'url' => '#',
+            'topnav' => true,
+        ],
+                [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
@@ -396,12 +406,13 @@ return [
             ],
         ],
         'Sweetalert2' => [
-            'active' => false,
+            'active' => true, // puede usarse en cualquier página del proyecto
             'files' => [
                 [
                     'type' => 'js',
-                    'asset' => false,
-                    'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'asset' => true,
+                    // 'location' => '//cdn.jsdelivr.net/npm/sweetalert2@8',
+                    'location' => 'vendor/sweetalert2/sweetalert2.all.min.js',
                 ],
             ],
         ],
