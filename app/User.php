@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use App\SocialProfile;
 
 class User extends Authenticatable
 {
@@ -36,4 +37,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function adminlte_image() {
+        $socialProfile = $this->socialProfiles()->first();
+
+        if ($socialProfile) {
+            return $socialProfile->social_avatar;
+        }
+        else { // que retorne cualquier img aleatoria
+            return "https://picsum.photos/300/300";
+        }
+    }
+
+    // relación uno a muchos
+    public function socialProfiles() { // es profiles pq un user puede tener varios (facebook, google, twitter, etc)
+        return $this->hasMany(SocialProfile::class);
+    }
 }
